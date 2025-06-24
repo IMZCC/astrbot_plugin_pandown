@@ -25,7 +25,6 @@ class PanDownPlugin(Star):
         user_name = event.get_sender_name()
         user_id = event.get_sender_id()
         
-        # 保存原始用户的会话信息
         self.pending_requests = event.unified_msg_origin
         
         logger.info(f"用户 {user_name} 触发pandown指令!")
@@ -43,7 +42,6 @@ class PanDownPlugin(Star):
             if contains(event.get_message_str(), "您的加速链接"):
                 logger.info(f"收到回复：{event.get_message_str()}")
                 
-                # 发送给所有等待的用户
                 message_chain = MessageChain().message(event.get_message_str())
                 await self.context.send_message(self.pending_requests, message_chain)
                 logger.info(f"已发送加速链接给用户 {self.pending_requests}")
