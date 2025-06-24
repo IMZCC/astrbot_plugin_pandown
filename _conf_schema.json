@@ -1,0 +1,9 @@
+{
+  "gh_id": {
+    "description": "pandown公众号唯一标识",
+    "type": "string",
+    "hint": "Pandownload公众号ID",
+    "obvious_hint": true,
+    "default": "wechatpadpro:FriendMessage:gh_ace9856008e1"
+  }
+}
