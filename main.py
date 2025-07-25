@@ -19,7 +19,7 @@ class PanDownPlugin(Star):
         self.gh_id = self.config.get('gh_id')
         self.pending_requests = None
 
-    @filter.command("pandown", alias={""}, desc="获取 PanDown 加速链接")
+    @filter.command("pandown", desc="获取 PanDown 加速链接")
     @filter.permission_type(filter.PermissionType.ADMIN)
     async def on_command(self, event: AstrMessageEvent):
         user_name = event.get_sender_name()
